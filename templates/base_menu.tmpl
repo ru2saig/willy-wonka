@@ -2,7 +2,7 @@
 {% import 'base_helper.tmpl' as base with context %}
 
 {% macro html_header() %}
-    <header class="cover">
+  <header class="cover">
     {{ html_site_title() }}
     <div>
     <label class="dark-mode-label hover:dark-mode-label" for="dark-mode">
@@ -28,29 +28,16 @@
     </label>
     {{ html_translation_header() }}
     </div>
-
+    
     {% if search_form %}
         <div class="searchform" role="search">
             {{ search_form }}
         </div>
     {% endif %}
 
-    </header>
-    <input id="cool-menu" type="checkbox" />
-      <label for="cool-menu" class="cool-menu__label">
-        <svg
-            class="cool-menu hover:cool-menu checked:cool-menu"
-            viewBox="0 0 100 100"
-            width="40"
-            height="40"
-            aria-hidden="true"
-        >
-            <circle cx="50" cy="50" r="50" fill-opacity="0.5"/>
-        </svg>
-      </label>
-    {{ html_navigation_links() }}
-
-    {{ template_hooks['page_header']() }}
+  </header>
+  <!-- {{ html_navigation_links() }} -->
+  {{ template_hooks['page_header']() }}
 {% endmacro %}
 
 {% macro html_site_title() %}
