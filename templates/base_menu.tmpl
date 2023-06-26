@@ -41,24 +41,12 @@
 {% endmacro %}
 
 {% macro html_site_title() %}
-    {% if 'index' in pagekind %}
-        <h1 id="brand" class="cover__title"><a href="{{ _link("root", None, lang) }}" title="{{ blog_title|e }}" rel="home">
-        {% if logo_url %}
-            <img src="{{ logo_url }}" alt="{{ blog_title|e }}" id="logo">
-        {% endif %}
-
-        {% if show_blog_title %}
-            <span id="blog-title">{{ blog_title|e }}</span>
-        {% endif %}
-        </a>
-        </h1>
-    {% else %}
-        <h3 id="brand" ><a href="{{ _link("root", None, lang) }}" title="{{ blog_title|e }}" rel="home">
-        {% if show_blog_title %}
-            <span id="blog-title">{{ blog_title|e }}</span>
-        {% endif %}
-        </h3>
+  <h1 id="brand" class="cover__title"><a href="{{ _link("root", None, lang) }}" title="{{ blog_title|e }}" rel="home">
+    {% if show_blog_title %}
+      <span id="blog-title">{{ blog_title |e }}</span>
     {% endif %}
+  </a>
+  </h1>
 {% endmacro %}
 
 {% macro html_navigation_links() %}
