@@ -4,6 +4,7 @@
 {% macro html_header() %}
   <header class="cover">
     {{ html_site_title() }}
+    {{html_navigation_links() }}
     <div>
     <label class="dark-mode-label hover:dark-mode-label" for="dark-mode">
         <?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg
@@ -36,7 +37,6 @@
     {% endif %}
 
   </header>
-  <!-- {{ html_navigation_links() }} -->
   {{ template_hooks['page_header']() }}
 {% endmacro %}
 
@@ -47,25 +47,27 @@
     {% endif %}
   </a>
   </h1>
-  <span id="blog-title">{{ blog_description |e }}</span>
+  <span id="blog-desc">{{ blog_description |e }}</span>
 {% endmacro %}
 
 {% macro html_navigation_links() %}
-    <nav class="menu">
-    <ul>
-    {{ html_navigation_links_entries(navigation_links) }}
-    {{ html_navigation_links_entries(navigation_alt_links) }}
-    {{ template_hooks['menu']() }}
-    {{ template_hooks['menu_alt']() }}
-    </ul>
-    </nav>
+   <div>
+     <nav class="menu">
+       <ul class="navigation">
+	 {{ html_navigation_links_entries(navigation_links) }}
+	 {{ html_navigation_links_entries(navigation_alt_links) }}
+	 {{ template_hooks['menu']() }}
+	 {{ template_hooks['menu_alt']() }}
+       </ul>
+     </nav>
+    </div>
 {% endmacro %}
 
 {% macro html_navigation_links_entries(navigation_links_source) %}
     {% for url, text in navigation_links_source[lang] %}
         {% if isinstance(url, tuple) %}
             <li> {{ text }}
-            <ul>
+            <ul class="navigation">
             {% for suburl, text in url %}
                 {% if rel_link(permalink, suburl) == "#" %}
                     <li class="active"><a href="{{ permalink }}">{{ text }}<span class="sr-only"> {{ messages("(active)", lang) }}</span></a></li>
