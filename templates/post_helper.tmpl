@@ -30,12 +30,12 @@
         <ul class="pager hidden-print pagination">
         {% if post.prev_post %}
             <li class="previous">
-                <a class="hover:pagination__link" href="{{ post.prev_post.permalink() }}" rel="prev" title="{{ post.prev_post.title()|e }}">{{ messages("Previous post") }}</a>
+                <a class="hover:pagination__link" href="{{ post.prev_post.permalink() }}" rel="prev" title="{{ post.prev_post.title()|e }}"> &larr; {{ messages("Previous post") }}</a>
             </li>
         {% endif %}
         {% if post.next_post %}
             <li class="next">
-                <a class="hover:pagination__link" href="{{ post.next_post.permalink() }}" rel="next" title="{{ post.next_post.title()|e }}">{{ messages("Next post") }}</a>
+                <a class="hover:pagination__link" href="{{ post.next_post.permalink() }}" rel="next" title="{{ post.next_post.title()|e }}">{{ messages("Next post") }}  &rarr; </a>
             </li>
         {% endif %}
         </ul>
