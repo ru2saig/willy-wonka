@@ -6,12 +6,12 @@
             <ul class="postindexpager pagination">
             {% if prevlink %}
             <li>
-                <a class="hover:pagination__link" href="{{ prevlink }}" rel="prev">{{ messages("Newer posts") }}</a>
+                <a class="hover:pagination__link" href="{{ prevlink }}" rel="prev"> &larr; {{ messages("Newer posts") }}</a>
             </li>
             {% endif %}
             {% if nextlink %}
-            <li>
-                <a class="hover:pagination__link" href="{{ nextlink }}" rel="next">{{ messages("Older posts") }}</a>
+            <li id="older-posts">
+                <a class="hover:pagination__link" href="{{ nextlink }}" rel="next">{{ messages("Older posts") }} &rarr; </a>
             </li>
             {% endif %}
             </ul>
