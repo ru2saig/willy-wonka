@@ -6,7 +6,12 @@ Check out the [repo](https://github.com/Woile/willy-theme).
 Original willy-theme by [Santiago Fraire Willemoes](https://woile.dev/).
 
 ## Changes
-TODO
+- Blog entries on the index page are single line
+- Navigation is now horizontal and in the header
+- The navbar shows all the time, in mobile and normal view
+- Enabled the footer
+- The dark-mode toggle is now near the blog title
+- Small visual changes to the spacing of the content, header and footer
 
 ## Features
 
