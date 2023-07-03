@@ -34,7 +34,7 @@
             </li>
         {% endif %}
         {% if post.next_post %}
-            <li class="next">
+            <li class="next" id="next-post">
                 <a class="hover:pagination__link" href="{{ post.next_post.permalink() }}" rel="next" title="{{ post.next_post.title()|e }}">{{ messages("Next post") }}  &rarr; </a>
             </li>
         {% endif %}

@@ -32,19 +32,13 @@
         {{ html_title() }}
         <div class="metadata">
             <span class="byline author vcard p-author h-card">
-            <span class="byline-name fn p-name" itemprop="author">
-                {% if author_pages_generated %}
-                    <a class="article__meta__link hover:article__meta__link u-url" href="{{ _link('author', post.author()) }}">{{ post.author()|e }}</a>
-                {% else %}
-                    {{ post.author()|e }}
-                {% endif %}
-            </span>
+		Tags:
             </span>
             {% for tag in post.tags %}
-                | <a class="tag p-category article__meta__link hover:article__meta__link" href="{{ _link('tag', tag) }}" rel="tag">#{{ tag|e }}</a>
+                <a class="tag p-category article__meta__link hover:article__meta__link" href="{{ _link('tag', tag) }}" rel="tag">#{{ tag|e }} </a>
             {% endfor %}
             <span class="dateline">
-            <a class="article__meta__link hover:article__meta__link" href="{{ post.permalink() }}" rel="bookmark">
+              | <a class="article__meta__link hover:article__meta__link" href="{{ post.permalink() }}" rel="bookmark">
             <time class="published dt-published" datetime="{{ post.formatted_date('webiso') }}" itemprop="datePublished" title="{{ post.formatted_date(date_format)|e }}">{{ post.formatted_date(date_format)|e }}</time>
             {% if post.updated and post.updated != post.date %}
                 <span class="updated"> ({{ messages("updated") }}
