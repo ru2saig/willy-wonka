@@ -38,7 +38,7 @@ lang="{{ lang }}">
 
     {% if favicons %}
         {% for name, file, size in favicons %}
-            <link rel="{{ name }}" href="{{ file }}" sizes="{{ size }}"/>
+            <link rel="/{{ name }}" href="/{{ file }}" sizes="{{ size }}"/>
         {% endfor %}
     {% endif %}
 
