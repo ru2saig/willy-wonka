@@ -28,7 +28,7 @@
 <div class="postindex">
 {% for post in posts %}
     <div class="entry">
-        <h3 class="header__title p-name index-entry-title"><a href="{{ post.permalink() }}" class="hover:header__title__link u-url">> {{ post.title()|e }}</a></h3>
+        <h3 class="header__title p-name index-entry-title"><a href="{{ post.permalink() }}" class="hover:header__title__link u-url">‣ {{ post.title()|e }}</a></h3>
         <div class="article__meta date-line">
           <span class="dateline">
             <a class="article__meta__link hover:article__meta__link" href="{{ post.permalink() }}" rel="bookmark">
